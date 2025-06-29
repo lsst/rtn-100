@@ -64,6 +64,7 @@ and overall DRP campaign status can be managaged by the
 Previous DRP campaign metrics   with similar stack pipelines:
 
 |DRP|  RTN|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|
+| --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- |
 |DC2 |   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|
 |RC2  |    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d|
 |DP1 | |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|
@@ -75,6 +76,7 @@ Previous DRP campaign metrics   with similar stack pipelines:
 |DR    2| |             2027 1-9|     500K|     189|       10000|        stages 1-4 |      80M |             100 PB|   300d|
 
 |DF| Site | cores | GB/core |Storage | Fraction of DRP | Notes|
+| --- | --- | --- | --- | --- | --- | --- |
 |USDF | SLAC | 6000 | 4 |10 PB | 0.35| |
 |FRDF|IN2P3 | 3000 | 8 |5 PB | 0.40| |
 |UKDF|LANCS | 1000 | 4 | 300 TB | 0.10 ||
