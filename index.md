@@ -36,6 +36,10 @@ Six patches were picked out for our multi site test.  Two patches were placed at
 ## Data Product QA - Yanny
 
 
+<figure>
+  <img src="figures/sixtract.png" />
+  <figcaption> These are the six tracts chosen for the 3x3 test </figcaption>
+</figure>
 
 
 See the [Documenteer documentation](https://documenteer.lsst.io/technotes/index.html) for tips on how to write and configure your new technote.
