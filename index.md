@@ -82,12 +82,14 @@ Previous DRP campaign metrics   with similar stack pipelines:
 
 <figure>
   <img src="./figures/tractsplit.png" />
-  <figcaption> Possible assignment of survey tracts to DFs </figcaption>
+  <figcaption> Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
+</figcaption>
 </figure>
 
 <figure>
   <img src="./figures/tractex225-40fr.png" />
-  <figcaption> Close up showing subset ring of tracts assigned to FRDF for processing </figcaption>
+  <figcaption> Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
+tracts shown for clarity. </figcaption>
 </figure>
 
 In order to run a full years worth
