@@ -37,7 +37,7 @@ Six patches were picked out for our multi site test.  Two patches were placed at
 
 
 <figure>
-  <img src="figures/sixtract.png" />
+  <img src="./figures/sixtract.png" />
   <figcaption> These are the six tracts chosen for the 3x3 test </figcaption>
 </figure>
 
