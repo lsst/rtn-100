@@ -1,4 +1,12 @@
+---
+title: Multisite Data Release Processing -- the 3x2 test
+author: Jennifer Adelman-McCarthy, Brian Yanny, Steve Pietrowicz, Fabio Hernandez, Peter Love, Tim Noble, Quentin Le Boulc'h, Dave McKay, Matthew Sims, George Beckett, Michelle Gower, Greg Daues, Hsin-Fang Chiang, Jhonatan Amado, Jim Chiang, KT Lim, Matt Doidge, Steven Simpson, Tim Jenness, Wen Guan, Zhaoyu Yang, Yusra AlSayyad
+date: 2025-Jun-30
+---
+
 # Multisite Data Release Processing
+
+
 
 ```{abstract}
 
@@ -74,12 +82,12 @@ The last two rows of the table show rough metrics for a six month and full year 
 
 Table 1: DRP campaign metrics:
 
-|DRP|  RTN|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|
+|DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|
 | --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- |
-|DC2 |   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|
-|RC2  |    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d|
-|3x2  |    |   2024 12-3 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 days|
-|DP1 | |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|
+|DC2 |DM-50631   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|
+|RC2  |DM-50660    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d|
+|3x2  |rtn-100  |   2024 12-3 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|
+|DP1 |rtn-095 |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|
 |DP0.2|      rtn-039|  2022 1-6|      20K|      150|           150|        steps 1-7 |         2.5M|              2.5PB   | 180d|
 |PDR2 |       rtn-063| 2023 5-9|      14K|      100|           400|         steps 1-7|         1.5M|              2.5PB|    120d|
 |LSSTCam DRP |       DM-51284| 2025 6|      3000|      162| 100|         stages 1-4|         0.5M|              700TB|    15d|
@@ -137,8 +145,8 @@ tracts shown for clarity. </figcaption>
 |Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | |
 |Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | |
 |Step 2d| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits || 
-|Stage 3| calibration visits | make warps,  make coadds | tract,patch | deep_coadds ||
-|Stage 4| visits,coadds | difference imaging analysis | visit,patch | light curves of sources ||
+|Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds ||
+|Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources ||
 |Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics ||
 
 Stage 1,3, and 4 are run widely parallel at all DFs.
