@@ -86,7 +86,7 @@ Table 1: DRP campaign metrics:
 | --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- |
 |DC2 |DM-50631   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|
 |RC2  |DM-50660    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d|
-|3x2  |rtn-100  |   2024 12-3 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|
+|3x2  |DM-48353  |   2024 12-2 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|
 |DP1 |rtn-095 |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|
 |DP0.2|      rtn-039|  2022 1-6|      20K|      150|           150|        steps 1-7 |         2.5M|              2.5PB   | 180d|
 |PDR2 |       rtn-063| 2023 5-9|      14K|      100|           400|         steps 1-7|         1.5M|              2.5PB|    120d|
@@ -103,12 +103,12 @@ of cores, RAM, storage and possible fraction of a DRP that would be processed at
 
 Table 2: Rubin DRP DFs
 
-|DF| Site | cores | GB/core |Storage | Fraction of DRP | Notes|
-| --- | --- | --- | --- | --- | --- | --- |
-|USDF | SLAC | 6000 | 4 |10 PB | 0.35| |
-|FRDF|IN2P3 | 3000 | 8 |5 PB | 0.40| |
-|UKDF|LANCS | 1000 | 4 | 300 TB | 0.10 ||
-|UKDF|RAL| 3000 | 4 | 5 PB |0.15 | |
+|DF| Site | cores | GB/core |Storage | Fraction of DRP |
+| --- | --- | --- | --- | --- | --- | 
+|USDF | SLAC | 6000 | 4 |10 PB | 0.35|
+|FRDF|IN2P3 | 3000 | 8 |5 PB | 0.40| 
+|UKDF|LANCS | 1000 | 4 | 300 TB | 0.10 |
+|UKDF|RAL| 3000 | 4 | 5 PB |0.15 | 
 
 ## Distribution of exposures to DFs for DRP
 
@@ -140,14 +140,14 @@ tracts shown for clarity. </figcaption>
 
 ## DRP processing stages
 
-|Stage |Input | description | parallelism | Output | Notes|
-| --- | --- | --- | --- | --- | --- |
-|Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | |
-|Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | |
-|Step 2d| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits || 
-|Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds ||
-|Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources ||
-|Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics ||
+|Stage |Input | description | parallelism | Output | 
+| --- | --- | --- | --- | --- | 
+|Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | 
+|Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | 
+|Step 2d| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits |
+|Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds |
+|Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources |
+|Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics |
 
 Stage 1,3, and 4 are run widely parallel at all DFs.
 
@@ -176,7 +176,7 @@ The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown i
 
 <figure>
   <img src="./figures/sixtract.png" />
-  <figcaption> These are the six tracts chosen for the 3x3 test </figcaption>
+  <figcaption> These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470) </figcaption>
 </figure>
 
 
@@ -218,7 +218,7 @@ This is a cached system which avoids overloading a distribution (i.e. docker hub
 PanDA workflow-management-system was used to submit jobs from a central DF (USDF) and switches in the bps submit files determined which 
 compute sites a job was sent to.  This generally worked well, once the configurations settled.
 
-##Evaluation and Concerns, Next steps
+## Evaluation and Concerns, Next steps
 
 While the refinement of the multisite process continues, we have these observations from
 this early test:
