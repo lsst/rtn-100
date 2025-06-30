@@ -19,7 +19,7 @@ epochs that go into object.
 
 Rough estimates based on early DRP campaigns shows that, to complete
 an annual DRP within 200 calendar days will require more than 
-20K dedicated cores (with 6 GB RAM/core), up to 25 PB of storage,
+20K dedicated cores (with 4 GB RAM/core), up to 25 PB of storage,
 and fast, reliable network connections as well as significant optimization
 of several key science algorithms.
 
@@ -82,18 +82,18 @@ The last two rows of the table show rough metrics for a six month and full year 
 
 Table 1: DRP campaign metrics:
 
-|DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|
-| --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- |
-|DC2 |DM-50631   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|
-|RC2  |DM-50660    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d|
-|3x2  |DM-48353  |   2024 12-2 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|
-|DP1 |rtn-095 |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|
-|DP0.2|      rtn-039|  2022 1-6|      20K|      150|           150|        steps 1-7 |         2.5M|              2.5PB   | 180d|
-|PDR2 |       rtn-063| 2023 5-9|      14K|      100|           400|         steps 1-7|         1.5M|              2.5PB|    120d|
-|LSSTCam DRP |       DM-51284| 2025 6|      3000|      162| 100|         stages 1-4|         0.5M|              700TB|    15d|
+|DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|Where|
+| --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- | ---|
+|DC2 |DM-50631   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|UKDF|
+|RC2  |DM-50660    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d| FRDF|
+|3x2  |DM-48353  |   2024 12-2 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|UK,FR,US|
+|DP1 |rtn-095 |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|USDF|
+|DP0.2|      rtn-039|  2022 1-6|      20K|      150|           150|        steps 1-7 |         2.5M|              2.5PB   | 180d|US|
+|PDR2 |       rtn-063| 2023 5-9|      14K|      100|           400|         steps 1-7|         1.5M|              2.5PB|    120d|US|
+|LSSTCam DRP |       DM-51284| 2025 6|      3000|      162| 100|         stages 1-4|         0.5M|              700TB|    15d|US|
 (projection)
-|DR    1 |            |         2026 1-9|     240K|     189|         8000|        stages 1-4|       40M|               50 PB|    150d|
-|DR    2| |             2027 1-9|     500K|     189|       10000|        stages 1-4 |      80M |             100 PB|   300d|
+|DR    1 |            |         2026 1-9|     240K|     189|         8000|        stages 1-4|       40M|               50 PB|    150d|FR,UK,US|
+|DR    2| |             2027 1-9|     500K|     189|       10000|        stages 1-4 |      80M |             100 PB|   300d|FR,UK,US|
 
 
 ## Data Facility resources
@@ -127,13 +127,13 @@ all years in a given Dec zone would remain at a given DF so that new coadds coul
 be constructed from the cumulative single-epoch exposures piled up at that facility.
 
 <figure>
-  <img src="./_static/tractsplit.png" />
+  <img src="./figures/tractsplit.png" />
   <figcaption> Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
 </figcaption>
 </figure>
 
 <figure>
-  <img src="./_static/tractex225-40fr.png" />
+  <img src="./figures/tractex225-40fr.png" />
   <figcaption> Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
 tracts shown for clarity. </figcaption>
 </figure>
@@ -144,7 +144,7 @@ tracts shown for clarity. </figcaption>
 | --- | --- | --- | --- | --- | 
 |Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | 
 |Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | 
-|Step 2d| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits |
+|Step 2c| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits |
 |Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds |
 |Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources |
 |Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics |
@@ -162,7 +162,7 @@ to produce time-series light curves of all sources.
 
 Step 2c is a special fan-in stage where brighter star catalogs from across the whole DRP footprint (from all stage 1 outputs at all DFs) 
 are brought together at the USDF to run a global photometric calibration step (fgcm). The per-detector solution for all visits/detectors
-is then distributed (fan-out) in step 2d back to each DF for continued processing.
+is then distributed (fan-out) at the end of step2c back to each DF for continued processing with step2d.
 Step 7 is also a fan-in step, where summary footprint statistics and metrics for all tracts at all DFs are brought together at USDF
 to generate overall campaign footprint depth plots and global metrics.
 
@@ -175,7 +175,7 @@ the three DFs: UKDF-LANCS, FRDF-IN2P3 and USDF-SLAC (RAL was still coming on lin
 The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown in the Figure.
 
 <figure>
-  <img src="./_static/sixtract.png" />
+  <img src="./figures/sixtract.png" />
   <figcaption> These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470) </figcaption>
 </figure>
 
