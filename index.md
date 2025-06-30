@@ -127,13 +127,13 @@ all years in a given Dec zone would remain at a given DF so that new coadds coul
 be constructed from the cumulative single-epoch exposures piled up at that facility.
 
 <figure>
-  <img src="./figures/tractsplit.png" />
+  <img src="./_static/tractsplit.png" />
   <figcaption> Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
 </figcaption>
 </figure>
 
 <figure>
-  <img src="./figures/tractex225-40fr.png" />
+  <img src="./_static/tractex225-40fr.png" />
   <figcaption> Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
 tracts shown for clarity. </figcaption>
 </figure>
@@ -175,7 +175,7 @@ the three DFs: UKDF-LANCS, FRDF-IN2P3 and USDF-SLAC (RAL was still coming on lin
 The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown in the Figure.
 
 <figure>
-  <img src="./figures/sixtract.png" />
+  <img src="./_static/sixtract.png" />
   <figcaption> These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470) </figcaption>
 </figure>
 
