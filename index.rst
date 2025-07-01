@@ -150,7 +150,7 @@ be constructed from the cumulative single-epoch exposures piled up at that facil
   :target: ./figures/tractsplit.png
   :alt:  Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
 
- Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
+Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
 
 
 ..
