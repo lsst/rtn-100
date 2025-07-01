@@ -116,6 +116,17 @@ Data Facility resources
 DFs currently used for DRP campaign testing are listed in Table 2, with estimates (to be updated)
 of cores, RAM, storage and possible fraction of a DRP that would be processed at each facility (to be updated).
 
+Simple table:
+
+===== ===== =====
+DF    Site  cores
+----- ----  -----
+USDF  SLAC  6000
+FRDF  IN2P3 3000
+UKDF  LANCS 1000
+====  ===== ====
+
+
 xxx.. table:: Rubin DRP DFs
 
   +--+------+-------+---------+--------+-----------------+
