@@ -147,17 +147,17 @@ be fixed for the life of the survey (unless a DF went offline), and visits from
 all years in a given Dec zone would remain at a given DF so that new coadds could
 be constructed from the cumulative single-epoch exposures piled up at that facility.
 
-.. figure:: figures/tractsplit.png
+.. figure:: _images/tractsplit.png
   :name: fig-tract-split-label
-  :target: ./figures/tractsplit.png
+  :target: _images/tractsplit.png
   :alt:  Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
 
 Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
 
 
-.. figure::  figures/tractex225-40fr.png
+.. figure::  _images/tractex225-40fr.png
   :name: fig-tract-fr-label
-  :target: ./figures/tractex225-40fr.png
+  :target: _images/tractex225-40fr.png
   :alt: Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered tracts shown for clarity.
 
 Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
@@ -211,19 +211,12 @@ Six tracts were chosen from  the HSC DRP2 survey and pairs of tracts were assign
 the three DFs: UKDF-LANCS, FRDF-IN2P3 and USDF-SLAC (RAL was still coming on line at that time).
 The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown in the Figure.
 
-.. figure:: /figures/sixtract.png
+.. figure:: _images/sixtract.png
   :name: fig-six-tracts-figure-label
-  :target: ./figures/sixtract.png
+  :target: _images/sixtract.png
   :alt: These are some six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
 
 These are six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
-
-..
-  <figure>
-  <img src="./figures/sixtract.png" />
-  <figcaption> These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470) </figcaption>
-  </figure>
-
 
 Stage (or steps) 1,2a and 2b were run at all three sites in parallel on their respective tracts,
 
