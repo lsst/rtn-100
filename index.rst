@@ -83,7 +83,7 @@ with estimates of storage used (no intermediate outputs removed in these totals 
 recover about 1/3 of storage space) as well as core hours and wall-clock days to complete the campaign.
 The last two rows of the table show rough metrics for a six month and full year DRP campaign.
 
-Table 1: DRP campaign metrics:
+.. table:: DRP campaign metrics.
 
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|Where|
@@ -102,7 +102,7 @@ Table 1: DRP campaign metrics:
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |LSSTCam DRP |       DM-51284| 2025 6|      3000|      162| 100|         stages 1-4|         0.5M|              700TB|    15d|US|
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
-(projection)
+|(projection)|
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DR    1 |            |         2026 1-9|     240K|     189|         8000|        stages 1-4|       40M|               50 PB|    150d|FR,UK,US|
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
@@ -110,12 +110,13 @@ Table 1: DRP campaign metrics:
 +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 
 
-## Data Facility resources
+Data Facility resources
+=======================
 
 DFs currently used for DRP campaign testing are listed in Table 2, with estimates (to be updated)
 of cores, RAM, storage and possible fraction of a DRP that would be processed at each facility (to be updated).
 
-Table 2: Rubin DRP DFs
+.. table:: Rubin DRP DFs
 
 +--+------+-------+---------+--------+-----------------+
 |DF| Site | cores | GB/core |Storage | Fraction of DRP |
@@ -175,7 +176,10 @@ tracts shown for clarity.
   tracts shown for clarity. </figcaption>
   </figure>
 
-## DRP processing stages
+DRP processing stages
+=====================
+
+.. table:: DRP processing stages.
 
 +------+------+-------------+-------------+--------+
 |Stage |Input | description | parallelism | Output | 
