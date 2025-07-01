@@ -116,30 +116,19 @@ Data Facility resources
 DFs currently used for DRP campaign testing are listed in Table 2, with estimates (to be updated)
 of cores, RAM, storage and possible fraction of a DRP that would be processed at each facility (to be updated).
 
-.. table:: Simple table.
+.. table:: Rubin DRP DFs.
 
-===== ===== =====
-DF    Site  cores
------ ----  -----
-USDF  SLAC  6000
-FRDF  IN2P3 3000
-UKDF  LANCS 1000
-====  ===== ====
-
-
-xxx.. table:: Rubin DRP DFs
-
-  +--+------+-------+---------+--------+-----------------+
-  |DF| Site | cores | GB/core |Storage | Fraction of DRP |
-  +==+======+=======+=========+========+=================+
-  |USDF | SLAC | 6000 | 4 |10 PB | 0.35|
-  +--+------+-------+---------+--------+-----------------+
-  |FRDF|IN2P3 | 3000 | 8 |5 PB | 0.40| 
-  +--+------+-------+---------+--------+-----------------+
-  |UKDF|LANCS | 1000 | 4 | 300 TB | 0.10 |
-  +--+------+-------+---------+--------+-----------------+
-  |UKDF|RAL| 3000 | 4 | 5 PB |0.15 | 
-  +--+------+-------+---------+--------+-----------------+
++----+------+------+---------+--------+-----------------+
+|DF  | Site | cores| GB/core |Storage | Frac. of DRP    |
++====+======+======+=========+========+=================+
+|USDF| SLAC | 6000 | 4       |10 PB   | 0.35            |
++----+------+------+-- ------+--------+-----------------+
+|FRDF|IN2P3 | 3000 | 8       |5 PB    | 0.40            | 
++----+------+------+---------+--------+-----------------+
+|UKDF|LANCS | 1000 | 4       | 300 TB | 0.10            |
++----+------+------+---------+--------+-----------------+
+|UKDF|RAL   | 3000 | 4       | 5 PB   | 0.15            | 
++----+------+------+---------+--------+-----------------+
 
 Distribution of exposures to DFs for DRP
 =======================================
@@ -166,13 +155,6 @@ be constructed from the cumulative single-epoch exposures piled up at that facil
 Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
 
 
-..
-  <figure>
-  <img src="./figures/tractsplit.png" />
-  <figcaption> Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
-  </figcaption>
-  </figure>
-
 .. figure::  figures/tractex225-40fr.png
   :name: fig-tract-fr-label
   :target: ./figures/tractex225-40fr.png
@@ -181,33 +163,26 @@ Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --
 Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
 tracts shown for clarity.
 
-..
-  <figure>
-  <img src="./figures/tractex225-40fr.png" />
-  <figcaption> Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
-  tracts shown for clarity. </figcaption>
-  </figure>
-
 DRP processing stages
 =====================
 
-xxx.. table:: DRP processing stages.
+.. table:: DRP processing stages.
 
-  +------+------+-------------+-------------+--------+
-  |Stage |Input | description | parallelism | Output | 
-  +======+======+=============+=============+========+
-  |Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | 
-  +------+------+-------------+-------------+--------+
-  |Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | 
-  +------+------+-------------+-------------+--------+
-  |Step 2c| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits |
-  +------+------+-------------+-------------+--------+
-  |Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds |
-  +------+------+-------------+-------------+--------+
-  |Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources |
-  +------+------+-------------+-------------+--------+
-  |Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics |
-  +------+------+-------------+-------------+--------+
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Stage  |Input                             | description                    | parallelism     | Output                       | 
++=======+==================================+================================+=================+==============================+
+|Stage 1| raw visits                       | isr,psf                        | wide            | psf, preliminary_visit_image | 
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Step 2c| star catalogs+Gaia               | global photometric calibration |fan-in to US     | fgcm photometric calibration | 
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Step 2c| fgcm,gbdes                       | apply calibration              | fan-out all DFs | photometrically calib. visits|
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Stage 3| calibrated visits                | warps,assemble,measure coadds  | wide            | deep_coadds                  |
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Stage 4| visits,coadds                    | difference imaging analysis    | wide            | light curves of sources      |
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
+|Step 7 | catalogs, tables                 | global footprint metrics       | fan-in to US    | global depth, coverage plots |
++-------+----------------------------------+--------------------------------+-----------------+------------------------------+
 
 Stage 1,3, and 4 are run widely parallel at all DFs.
 
