@@ -4,13 +4,11 @@ author: Jennifer Adelman-McCarthy, Brian Yanny, Steve Pietrowicz, Fabio Hernande
 date: 2025-Jun-30
 ---
 
-#################################
-Multisite Data Release Processing
-#################################
+# Multisite Data Release Processing
 
 
-Abstract
-========
+
+```{abstract}
 
 Data Release Processing (DRP) for Rubin has the goal of producing a
 cumulative (re)processing of all science-quality exposures in the 
@@ -39,9 +37,9 @@ continued work.
 
 These tests hope to demonstrate the feasibility of multisite production 
 for Rubin DRP.
+```
 
-Requirements for a DRP 
-======================
+## Requirements for a DRP 
 
 To enable multisite DRP to move forward for Rubin, these rough requirements should be met:
 
@@ -66,8 +64,7 @@ and overall DRP campaign status can be managaged by the
 (distributed) Campaign Management team.
 
 
-Experience from past DRP campaigns, DF specs
-============================================
+## Experience from past DRP campaigns, DF specs
 
 Over the past several years, many small-to-medium scale 
 DRP campaigns have been run.  These early DRP campaigns varied in size from
@@ -85,29 +82,18 @@ The last two rows of the table show rough metrics for a six month and full year 
 
 Table 1: DRP campaign metrics:
 
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|Where|
-+===+========+=============+============+==========+=========+==============+=============+=========+=====+=====+
+| --- | --- | ---- | --- | --- | ---- | ---- | ---- |---- | ---- | ---|
 |DC2 |DM-50631   |     2 days  |       300|      150|             2|             steps 1-7 |         5K|               10TB|        2d|UKDF|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |RC2  |DM-50660    |   3 days  |      423|      100|   3|             steps 1-7|        10K |             25TB|         3d| FRDF|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |3x2  |DM-48353  |   2024 12-2 |      800|      100|   6|             steps 1-7|        20K |             50TB|         90 d|UK,FR,US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DP1 |rtn-095 |    3 days |       1800 |         9 |  22 |           steps 1-7|   10K|              25TB |        3d|USDF|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DP0.2|      rtn-039|  2022 1-6|      20K|      150|           150|        steps 1-7 |         2.5M|              2.5PB   | 180d|US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |PDR2 |       rtn-063| 2023 5-9|      14K|      100|           400|         steps 1-7|         1.5M|              2.5PB|    120d|US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |LSSTCam DRP |       DM-51284| 2025 6|      3000|      162| 100|         stages 1-4|         0.5M|              700TB|    15d|US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 (projection)
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DR    1 |            |         2026 1-9|     240K|     189|         8000|        stages 1-4|       40M|               50 PB|    150d|FR,UK,US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 |DR    2| |             2027 1-9|     500K|     189|       10000|        stages 1-4 |      80M |             100 PB|   300d|FR,UK,US|
-+---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
 
 
 ## Data Facility resources
@@ -117,17 +103,12 @@ of cores, RAM, storage and possible fraction of a DRP that would be processed at
 
 Table 2: Rubin DRP DFs
 
-+--+------+-------+---------+--------+-----------------+
 |DF| Site | cores | GB/core |Storage | Fraction of DRP |
-+==+======+=======+=========+========+=================+
+| --- | --- | --- | --- | --- | --- | 
 |USDF | SLAC | 6000 | 4 |10 PB | 0.35|
-+--+------+-------+---------+--------+-----------------+
 |FRDF|IN2P3 | 3000 | 8 |5 PB | 0.40| 
-+--+------+-------+---------+--------+-----------------+
 |UKDF|LANCS | 1000 | 4 | 300 TB | 0.10 |
-+--+------+-------+---------+--------+-----------------+
 |UKDF|RAL| 3000 | 4 | 5 PB |0.15 | 
-+--+------+-------+---------+--------+-----------------+
 
 ## Distribution of exposures to DFs for DRP
 
@@ -145,53 +126,28 @@ be fixed for the life of the survey (unless a DF went offline), and visits from
 all years in a given Dec zone would remain at a given DF so that new coadds could
 be constructed from the cumulative single-epoch exposures piled up at that facility.
 
-.. figure:: figures/tractsplit.png
-  :name: fig-tract-split-label
-  :target: ./figures/tractsplit.png
-  :alt:  Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
-
- Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
-
-
-..
-  <figure>
+<figure>
   <img src="./figures/tractsplit.png" />
   <figcaption> Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
-  </figcaption>
-  </figure>
+</figcaption>
+</figure>
 
-.. figure::  figures/tractex225-40fr.png
-  :name: fig-tract-fr-label
-  :target: ./figures/tractex225-40fr.png
-  :alt: Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered tracts shown for clarity.
-
-Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
-tracts shown for clarity.
-
-..
-  <figure>
+<figure>
   <img src="./figures/tractex225-40fr.png" />
   <figcaption> Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered
-  tracts shown for clarity. </figcaption>
-  </figure>
+tracts shown for clarity. </figcaption>
+</figure>
 
 ## DRP processing stages
 
-+------+------+-------------+-------------+--------+
 |Stage |Input | description | parallelism | Output | 
-+======+======+=============+=============+========+
+| --- | --- | --- | --- | --- | 
 |Stage 1| raw visits | isr,psf | wide  | psf, preliminary_visit_image | 
-+------+------+-------------+-------------+--------+
 |Step 2c| brighter star catalog+Gaia |global calibration  | fan-in to USDF | fgcm photometric calibration | 
-+------+------+-------------+-------------+--------+
 |Step 2c| fgcm,gbdes | apply calibration  | fan-out to all DFs | photometrically,astrometrically calibrated visits |
-+------+------+-------------+-------------+--------+
 |Stage 3| calibration visits | make warps,  make coadds | wide | deep_coadds |
-+------+------+-------------+-------------+--------+
 |Stage 4| visits,coadds | difference imaging analysis | wide | light curves of sources |
-+------+------+-------------+-------------+--------+
 |Step 7| catalogs, tables | global footprint metrics  | fan-in of key summary catalogs | global plots of footprint depth and metrics |
-+------+------+-------------+-------------+--------+
 
 Stage 1,3, and 4 are run widely parallel at all DFs.
 
@@ -211,27 +167,17 @@ Step 7 is also a fan-in step, where summary footprint statistics and metrics for
 to generate overall campaign footprint depth plots and global metrics.
 
 
-The 2x3 multisite test
-======================
-
+## The 2x3 multisite test
 
 In late 2024 and early 2025 a small 2-tract at 3 DF test was run.
 Six tracts were chosen from  the HSC DRP2 survey and pairs of tracts were assigned to 
 the three DFs: UKDF-LANCS, FRDF-IN2P3 and USDF-SLAC (RAL was still coming on line at that time).
 The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown in the Figure.
 
-.. figure:: /figures/sixtract.png
-  :name: fig-six-tracts-figure-label
-  :target: ./figures/sixtract.png
-  :alt: These are some six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
-
-These are six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
-
-..
-  <figure>
+<figure>
   <img src="./figures/sixtract.png" />
   <figcaption> These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470) </figcaption>
-  </figure>
+</figure>
 
 
 Stage (or steps) 1,2a and 2b were run at all three sites in parallel on their respective tracts,
@@ -272,8 +218,7 @@ This is a cached system which avoids overloading a distribution (i.e. docker hub
 PanDA workflow-management-system was used to submit jobs from a central DF (USDF) and switches in the bps submit files determined which 
 compute sites a job was sent to.  This generally worked well, once the configurations settled.
 
-Evaluation and Concerns, Next steps
-===================================
+## Evaluation and Concerns, Next steps
 
 While the refinement of the multisite process continues, we have these observations from
 this early test:
