@@ -83,7 +83,7 @@ with estimates of storage used (no intermediate outputs removed in these totals 
 recover about 1/3 of storage space) as well as core hours and wall-clock days to complete the campaign.
 The last two rows of the table show rough metrics for a six month and full year DRP campaign.
 
-.. table:: DRP campaign metrics.
+xxx.. table:: DRP campaign metrics.
 
   +---+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+-----+
   |DRP|  RTN/DM|     Year Mos|      visits| det/visit|  tracts | steps/stages |   core-hours|  storage| days|Where|
@@ -116,7 +116,7 @@ Data Facility resources
 DFs currently used for DRP campaign testing are listed in Table 2, with estimates (to be updated)
 of cores, RAM, storage and possible fraction of a DRP that would be processed at each facility (to be updated).
 
-.. table:: Rubin DRP DFs
+xxx.. table:: Rubin DRP DFs
 
   +--+------+-------+---------+--------+-----------------+
   |DF| Site | cores | GB/core |Storage | Fraction of DRP |
@@ -180,7 +180,7 @@ tracts shown for clarity.
 DRP processing stages
 =====================
 
-.. table:: DRP processing stages.
+xxx.. table:: DRP processing stages.
 
   +------+------+-------------+-------------+--------+
   |Stage |Input | description | parallelism | Output | 
