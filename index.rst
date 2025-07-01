@@ -116,7 +116,7 @@ Data Facility resources
 DFs currently used for DRP campaign testing are listed in Table 2, with estimates (to be updated)
 of cores, RAM, storage and possible fraction of a DRP that would be processed at each facility (to be updated).
 
-Simple table:
+.. table:: Simple table.
 
 ===== ===== =====
 DF    Site  cores
