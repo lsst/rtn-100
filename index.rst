@@ -160,7 +160,7 @@ be constructed from the cumulative single-epoch exposures piled up at that facil
   </figcaption>
   </figure>
 
-.. figure:  figures/tractex225-40fr.png
+.. figure::  figures/tractex225-40fr.png
   :name: fig-tract-fr-label
   :target: ./figures/tractex225-40fr.png
   :alt: Close up showing subset ring of (green) tracts assigned to FRDF for processing.  Note only even numbered tracts shown for clarity.
@@ -223,9 +223,9 @@ The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown i
 .. figure:: /figures/sixtract.png
   :name: fig-six-tracts-figure-label
   :target: ./figures/sixtract.png
-  :alt: These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
+  :alt: These are some six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
 
-These are the six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
+These are six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
 
 ..
   <figure>
