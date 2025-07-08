@@ -1,18 +1,13 @@
----
-title: Multisite Data Release Processing -- the 3x2 test
-author: Jennifer Adelman-McCarthy, Brian Yanny, Steve Pietrowicz, Fabio Hernandez, Peter Love, Tim Noble, Quentin Le Boulc'h, Dave McKay, Matthew Sims, George Beckett, Michelle Gower, Greg Daues, Hsin-Fang Chiang, Jhonatan Amado, Jim Chiang, KT Lim, Matt Doidge, Steven Simpson, Tim Jenness, Wen Guan, Zhaoyu Yang, Jim Bosch, Yusra AlSayyad
-date: 2025-Jul-01
----
-
-#################################
-Multisite Data Release Processing
-#################################
+##################################################
+Milestone: Ops rehearsal for data processing No. 3
+##################################################
 
 
 Abstract
 ========
 
-Data Release Processing (DRP) for Rubin has the goal of producing a
+Rubin milestone LDM-503-16: (Ops rehearsal for data processing - No. 3) 
+(DM-17139) has the goal of demonstrating the feasibility of producing a
 cumulative (re)processing of all science-quality exposures in the 
 LSST footprint (up to 25,000 square degrees) into deep_coadd 
 images in six bands, with tables of detected and measured objects 
@@ -29,7 +24,9 @@ Since a single DF may not have all the required resources to turn around
 a DRP in the allotted time, a multisite processing system is planned
 to distribute the compute load over (currently) four data facilities.
 
-We describe details of early tests of the multisite processing system.
+This Rubin technical note describes details of tests of 
+the DRP multisite processing system as well as a description of how
+a DR1-sized DRP could proceed.
 
 While most stages of the processing may generally be run in parallel for each 
 single-epoch exposure or coadd tract, there are stages of the 
@@ -214,9 +211,9 @@ The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown i
 .. figure:: _images/sixtract.png
   :name: fig-six-tracts-figure-label
   :target: _images/sixtract.png
-  :alt: These are some six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
+  :alt: These are some six tracts chosen for the 2x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
 
-These are six tracts chosen for the 3x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
+These are six tracts chosen for the 2x3 test, divided as follows: UKDF: (9941,9942) , FRDF (9948, 9949), USDF (9469,9470)
 
 Stage (or steps) 1,2a and 2b were run at all three sites in parallel on their respective tracts,
 
@@ -267,10 +264,13 @@ and for all tools used (panDA, rucio configs ,rucio-register configs, ctrl_inges
 even though in principle it need be only done once.  
 Everything needs to be documented and then repeated from scratch to make sure it all still works.
 
-2. Monitoring must be available to make sure that services are up (i.e. rucio, ctrl_ingestd) and that data is moving as expected.  
+2. The division-of-labor and availability of resources at each DF should
+be reviewed and updated to match current conditions.
+
+3. Monitoring must be available to make sure that services are up (i.e. rucio, ctrl_ingestd) and that data is moving as expected.  
 Rucio moves are currently 'open loop' in that one must keep polling a status for a given dataset to make sure it moved.
 
-3. There is still a lot of CM to be automated -- the 3x2 test here took over 3 months of wall-clock time (should be <  3 days) due to 
+4. There is still a lot of CM to be automated -- the 3x2 test here took over 3 months of wall-clock time (should be <  3 days) due to 
 teething issues, configuration issues, operator misunderstandings.  The whole process is only recently becoming more stable.
 
 
