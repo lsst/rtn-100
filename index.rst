@@ -122,9 +122,9 @@ of cores, RAM, storage and possible fraction of a DRP that would be processed at
   +----+------+------+---------+--------+-----------------+
   |FRDF|IN2P3 | 3000 | 8       |5 PB    | 0.40            | 
   +----+------+------+---------+--------+-----------------+
-  |UKDF|LANCS | 1000 | 4       |300 TB  | 0.10            |
+  |UKDF|LANCS | 1500 | 4       |1.2 PB  | 0.10            |
   +----+------+------+---------+--------+-----------------+
-  |UKDF|RAL   | 3000 | 4       | 5 PB   | 0.15            | 
+  |UKDF|RAL   | 6000 | 4       |9 PB    | 0.15            | 
   +----+------+------+---------+--------+-----------------+
 
 Distribution of exposures to DFs for DRP
