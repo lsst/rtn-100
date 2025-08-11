@@ -13,77 +13,182 @@ license.id = "CC-BY-4.0"
 #state = "draft"
 
 [[technote.authors]]
-name.given = "Jennifer K."
-name.family = "Adelman-McCarthy"
 internal_id = "adelmanmccarthyj"
 orcid = "https://orcid.org/0000-0002-4100-8928"
+name = {given = "Jennifer K.", family = "Adelman-McCarthy"}
 [[technote.authors.affiliations]]
 name = "Fermi National Accelerator Laboratory"
 internal_id = "Fermilab"
 address = "P. O. Box 500, Batavia, IL 60510, USA"
+ror = "https://ror.org/020hgte69"
 [[technote.authors]]
-name.given = "Brian"
-name.family = "Yanny"
+internal_id = "yannyb"
+name = {given = "Brian P.", family = "Yanny"}
+orcid = "https://orcid.org/0000-0002-9541-2678"
+[[technote.authors.affiliations]]
+name = "Fermi National Accelerator Laboratory"
+internal_id = "Fermilab"
+ror = "https://ror.org/020hgte69"
 [[technote.authors]]
-name.given = "Steve"
-name.family = "Pietrowicz"
+internal_id = "pietrowiczs"
+name = {given = "Stephen R.", family = "Pietrowicz"}
+orcid = "https://orcid.org/0000-0002-2158-6480"
+[[technote.authors.affiliations]]
+name = "University of Illinois at Urbana-Champaign"
+internal_id = "NCSA"
+ror = "https://ror.org/03g9ch715"
 [[technote.authors]]
-name.given = "Fabio"
-name.family = "Hernandez"
+internal_id = "hernandezf"
+name = {given = "Fabio", family = "Hernandez"}
+orcid = "https://orcid.org/0000-0001-7203-2552"
+[[technote.authors.affiliations]]
+name = "CNRS, CC-IN2P3"
+internal_id = "IN2P3-CC"
+ror = "https://ror.org/04dcc3438"
 [[technote.authors]]
-name.given = "Peter"
-name.family = "Love"
+internal_id = "lovep"
+name = {given = "Peter", family = "Love"}
+[[technote.authors.affiliations]]
+name = "Lancaster University"
+internal_id = "LancasterU"
+ror = "https://ror.org/04f2nsd36"
 [[technote.authors]]
-name.given = "Tim"
-name.family = "Noble"
+internal_id = "noblet"
+name = {given = "Timothy", family = "Noble"}
+[[technote.authors.affiliations]]
+name = "Science and Technology Facilities Council"
+internal_id = "STFC-RAL"
+ror = "https://ror.org/03gq8fr08"
 [[technote.authors]]
-name.given = "Quentin"
-name.family = "Le Boulc'h"
+internal_id = "leboulchq"
+name = {given = "Quentin", family = "Le Boulc'h"}
+orcid = "https://orcid.org/0009-0007-5244-3187"
+[[technote.authors.affiliations]]
+name = "CNRS, CC-IN2P3"
+internal_id = "IN2P3-CC"
+ror = "https://ror.org/04dcc3438"
 [[technote.authors]]
-name.given = "Dave"
-name.family = "McKay"
+internal_id = "mckayd"
+name = {given = "David", family = "McKay"}
+orcid = "https://orcid.org/0000-0003-0362-7848"
+[[technote.authors.affiliations]]
+name = "University of Edinburgh"
+internal_id = "EPCC"
+ror = "https://ror.org/01nrxwf90"
 [[technote.authors]]
-name.given = "Matthew"
-name.family = "Sims"
+internal_id = "simsmc"
+name = {given = "Mathew C.", family = "Sims"}
+orcid = "https://orcid.org/0009-0005-2484-6603"
+[[technote.authors.affiliations]]
+name = "Science and Technology Facilities Council, UK Research and Innovation"
+internal_id = "STFC"
 [[technote.authors]]
-name.given = "George"
-name.family = "Beckett"
+internal_id = "beckettmg"
+name = {given = "Mark G.", family = "Beckett"}
+orcid = "https://orcid.org/0000-0003-3623-9753"
+[[technote.authors.affiliations]]
+name = "University of Edinburgh"
+internal_id = "EdinburghIA"
+ror = "https://ror.org/01nrxwf90"
 [[technote.authors]]
-name.given = "Michelle"
-name.family = "Gower"
+internal_id = "gowerm"
+name = {given = "Michelle", family = "Gower"}
+orcid = "https://orcid.org/0000-0001-9513-6987"
+[[technote.authors.affiliations]]
+name = "University of Illinois at Urbana-Champaign"
+internal_id = "NCSA"
+ror = "https://ror.org/03g9ch715"
 [[technote.authors]]
-name.given = "Greg"
-name.family = "Daues"
+internal_id = "dauesg"
+name = {given = "Greg", family = "Daues"}
+[[technote.authors.affiliations]]
+name = "University of Illinois at Urbana-Champaign"
+internal_id = "NCSA"
+ror = "https://ror.org/03g9ch715"
 [[technote.authors]]
-name.given = "Hsin-Fang"
-name.family = "Chiang"
+internal_id = "chiangh"
+name = {given = "Hsin-Fang", family = "Chiang"}
+orcid = "https://orcid.org/0000-0002-1181-1621"
+[[technote.authors.affiliations]]
+name = "SLAC National Accelerator Laboratory"
+internal_id = "SLAC"
+ror = "https://ror.org/05gzmn429"
 [[technote.authors]]
-name.given = "Jhonatan"
-name.family = "Amado"
+internal_id = "amadoj"
+name = {given = "Jhonatan", family = "Amado"}
+orcid = "https://orcid.org/0000-0001-7729-5538"
+[[technote.authors.affiliations]]
+name = "Fermi National Accelerator Laboratory"
+internal_id = "Fermilab"
+ror = "https://ror.org/020hgte69"
 [[technote.authors]]
-name.given = "Jim"
-name.family = "Chiang"
+internal_id = "chiangj"
+name = {given = "James", family = "Chiang"}
+orcid = "https://orcid.org/0000-0001-5738-8956"
+[[technote.authors.affiliations]]
+name = "SLAC National Accelerator Laboratory"
+internal_id = "SLAC-Kavli"
+ror = "https://ror.org/00pwqz914"
 [[technote.authors]]
-name.given = "K T"
-name.family = "Lim"
+internal_id = "limk"
+name = {given = "Kian-Tat", family = "Lim"}
+orcid = "https://orcid.org/0000-0002-6338-6516"
+[[technote.authors.affiliations]]
+name = "SLAC National Accelerator Laboratory"
+internal_id = "SLAC"
+ror = "https://ror.org/05gzmn429"
 [[technote.authors]]
-name.given = "Matt"
-name.family = "Doidge"
+internal_id = "doidgems"
+name = {given = "Matt", family = "Doidge"}
+orcid = "https://orcid.org/0000-0002-3441-5568"
+[[technote.authors.affiliations]]
+name = "Lancaster University"
+internal_id = "LancasterU"
+ror = "https://ror.org/04f2nsd36"
 [[technote.authors]]
-name.given = "Steven"
-name.family = "Simpson"
+internal_id = "simpsons"
+name = {given = "Steven", family = "Simpson"}
+orcid = "https://orcid.org/0000-0002-1786-8004"
+[[technote.authors.affiliations]]
+name = "Lancaster University"
+internal_id = "LancasterU"
+ror = "https://ror.org/04f2nsd36"
 [[technote.authors]]
-name.given = "Tim"
-name.family = "Jenness"
+internal_id = "jennesst"
+name = {given = "Tim", family = "Jenness"}
+orcid = "https://orcid.org/0000-0001-5982-167X"
+[[technote.authors.affiliations]]
+name = "Vera C. Rubin Observatory Project Office"
+internal_id = "RubinObs"
+ror = "https://ror.org/048g3cy84"
 [[technote.authors]]
-name.given = "Wen"
-name.family = "Guan"
+internal_id = "guanw"
+name = {given = "Wen", family = "Guan"}
+orcid = "https://orcid.org/0000-0002-5548-5194"
+[[technote.authors.affiliations]]
+name = "Brookhaven National Laboratory"
+internal_id = "BNL"
+ror = "https://ror.org/02ex6cf31"
 [[technote.authors]]
-name.given = "Zhaoyu"
-name.family = "Yang"
+internal_id = "yangz"
+name = {given = "Zhaoyu", family = "Yang"}
+[[technote.authors.affiliations]]
+name = "Brookhaven National Laboratory"
+internal_id = "BNL"
+ror = "https://ror.org/02ex6cf31"
 [[technote.authors]]
-name.given = "Jim"
-name.family = "Bosch"
+internal_id = "boschjf"
+name = {given = "James F.", family = "Bosch"}
+orcid = "https://orcid.org/0000-0003-2759-5764"
+[[technote.authors.affiliations]]
+name = "Princeton University"
+internal_id = "Princeton-Astro"
+ror = "https://ror.org/00hx57361"
 [[technote.authors]]
-name.given = "Yusra"
-name.family = "AlSayyad"
+internal_id = "alsayyady"
+name = {given = "Yusra", family = "AlSayyad"}
+orcid = "https://orcid.org/0009-0008-9216-7516"
+[[technote.authors.affiliations]]
+name = "Princeton University"
+internal_id = "Princeton-Astro"
+ror = "https://ror.org/00hx57361"
