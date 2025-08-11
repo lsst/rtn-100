@@ -6,16 +6,16 @@ Milestone: Ops rehearsal for data processing No. 3
 Abstract
 ========
 
-Rubin milestone LDM-503-16: (Ops rehearsal for data processing - No. 3) 
+Rubin milestone LDM-503-16: (Ops rehearsal for data processing - No. 3)
 (DM-17139) has the goal of demonstrating the feasibility of producing a
-cumulative (re)processing of all science-quality exposures in the 
-LSST footprint (up to 25,000 square degrees) into deep_coadd 
-images in six bands, with tables of detected and measured objects 
-and their properties, along with tables of sources across multiple 
+cumulative (re)processing of all science-quality exposures in the
+LSST footprint (up to 25,000 square degrees) into deep_coadd
+images in six bands, with tables of detected and measured objects
+and their properties, along with tables of sources across multiple
 epochs that go into object.
 
 Rough estimates based on early DRP campaigns shows that, to complete
-an annual DRP within 200 calendar days will require more than 
+an annual DRP within 200 calendar days will require more than
 20K dedicated cores (with 4 GB RAM/core), up to 25 PB of storage,
 and fast, reliable network connections as well as significant optimization
 of several key science algorithms.
@@ -24,26 +24,26 @@ Since a single DF may not have all the required resources to turn around
 a DRP in the allotted time, a multisite processing system is planned
 to distribute the compute load over (currently) four data facilities.
 
-This Rubin technical note describes details of tests of 
+This Rubin technical note describes details of tests of
 the DRP multisite processing system as well as a description of how
 a DR1-sized DRP could proceed.
 
-While most stages of the processing may generally be run in parallel for each 
-single-epoch exposure or coadd tract, there are stages of the 
-processing where intermediate results are brought together (fan-in) for 
-a 'global fit or summary' and then the results distributed (fan-out) for 
+While most stages of the processing may generally be run in parallel for each
+single-epoch exposure or coadd tract, there are stages of the
+processing where intermediate results are brought together (fan-in) for
+a 'global fit or summary' and then the results distributed (fan-out) for
 continued work.
 
-These tests hope to demonstrate the feasibility of multisite production 
+These tests hope to demonstrate the feasibility of multisite production
 for Rubin DRP.
 
-Requirements for a DRP 
+Requirements for a DRP
 ======================
 
 To enable multisite DRP to move forward for Rubin, these rough requirements should be met:
 
 1. Raw exposure and calibration (and ancillary) data as well as processing
-codes can be distributed to all data facilities (DFs) involved 
+codes can be distributed to all data facilities (DFs) involved
 efficiently and automatically.  It should be possible to verify that input
 exposures and output data products are not lost.
 
@@ -51,24 +51,24 @@ exposures and output data products are not lost.
 of time, within the allocated resources.
 
 3. Processed data products and quality metrics can be returned to a central
-DF (USDF) for archival (i.e. to tape robot), quality and science analysis 
+DF (USDF) for archival (i.e. to tape robot), quality and science analysis
 and further distribution (i.e. to IDACs).
 
-4. The scientific results obtained from processing should not be 
+4. The scientific results obtained from processing should not be
 site-dependent (within reasonable tolerance).  Some small fraction
 of the data may be processed at multiple sites.
 
-5. Launching and monitoring of current status of processing at each site 
-and overall DRP campaign status can be managaged by the 
+5. Launching and monitoring of current status of processing at each site
+and overall DRP campaign status can be managaged by the
 (distributed) Campaign Management team.
 
 
 Experience from past DRP campaigns, DF specs
 ============================================
 
-Over the past several years, many small-to-medium scale 
+Over the past several years, many small-to-medium scale
 DRP campaigns have been run.  These early DRP campaigns varied in size from
-a few hundred to many thousands of visits, covering two to several hundred tracts on the sky.
+a few hundred to many thousands of visits, covering two to several hundred tracts on the sky :cite:`RTN-095,RTN-063,RTN-039`.
 
 A tract covers about 2.1 unique square degrees of sky and overlaps neighboring tracts by 10%-20%.
 
@@ -76,7 +76,7 @@ The whole of the Rubin LSST footprint consists of about 15,000 tracts, or 30,000
 of which Rubin may cover 25,000 sq degrees in its wide field survey (ref).
 
 The table gives previous smaller scale DRP campaign visit (30-second exposure) and tract metrics along
-with estimates of storage used (no intermediate outputs removed in these totals -- removing intermediates such as warps can 
+with estimates of storage used (no intermediate outputs removed in these totals -- removing intermediates such as warps can
 recover about 1/3 of storage space) as well as core hours and wall-clock days to complete the campaign.
 The last two rows of the table show rough metrics for a six month and full year DRP campaign.
 
@@ -105,7 +105,7 @@ The last two rows of the table show rough metrics for a six month and full year 
   +----+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+--------+
   |DR2 |        |     2027 1-9|     500K   |     189  |    10000|   stages 1-4 |      80M    |   100 PB| 300d|FR,UK,US|
   +----+--------+-------------+------------+----------+---------+--------------+-------------+---------+-----+--------+
-  
+
 
 Data Facility resources
 =======================
@@ -120,11 +120,11 @@ of cores, RAM, storage and possible fraction of a DRP that would be processed at
   +====+======+======+=========+========+=================+
   |USDF| SLAC | 6000 | 4       |10 PB   | 0.35            |
   +----+------+------+---------+--------+-----------------+
-  |FRDF|IN2P3 | 3000 | 8       |5 PB    | 0.40            | 
+  |FRDF|IN2P3 | 3000 | 8       |5 PB    | 0.40            |
   +----+------+------+---------+--------+-----------------+
   |UKDF|LANCS | 1500 | 4       |1.2 PB  | 0.10            |
   +----+------+------+---------+--------+-----------------+
-  |UKDF|RAL   | 6000 | 4       |9 PB    | 0.15            | 
+  |UKDF|RAL   | 6000 | 4       |9 PB    | 0.15            |
   +----+------+------+---------+--------+-----------------+
 
 Distribution of exposures to DFs for DRP
@@ -136,18 +136,18 @@ the RA (Right Ascension) of the visits will move from
 To keep all DFs busy with stage 1 (single visit processing),
 the Rubin footprint is divided into 8 declination rings from South to North,
 with 2 rings exposures being sent to each DF.  In this way, no matter the season,
-all DFs will have the chance to work on new exposures.  
+all DFs will have the chance to work on new exposures.
 
 Since coadds assemble data from the visits in the same part of the sky (tracts),
 the default plan is that once the zone (rings) are set, the data distribution would
-be fixed for the life of the survey (unless a DF went offline), and visits from 
+be fixed for the life of the survey (unless a DF went offline), and visits from
 all years in a given Dec zone would remain at a given DF so that new coadds could
 be constructed from the cumulative single-epoch exposures piled up at that facility.
 
 .. figure:: _images/tractsplit.png
   :name: fig-tract-split-label
   :target: _images/tractsplit.png
-  :alt:  Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL). 
+  :alt:  Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
 
 Possible assignment of survey tracts to DFs (i.e. Green tracts --> FRDF, Blue --> RAL).
 
@@ -166,11 +166,11 @@ DRP processing stages
 .. table:: DRP processing stages.
 
   +-------+----------------------------------+--------------------------------+-----------------+------------------------------+
-  |Stage  |Input                             | description                    | parallelism     | Output                       | 
+  |Stage  |Input                             | description                    | parallelism     | Output                       |
   +=======+==================================+================================+=================+==============================+
-  |Stage 1| raw visits                       | isr,psf                        | wide            | psf, preliminary_visit_image | 
+  |Stage 1| raw visits                       | isr,psf                        | wide            | psf, preliminary_visit_image |
   +-------+----------------------------------+--------------------------------+-----------------+------------------------------+
-  |Step 2c| star catalogs+Gaia               | global photometric calibration |fan-in to US     | fgcm photometric calibration | 
+  |Step 2c| star catalogs+Gaia               | global photometric calibration |fan-in to US     | fgcm photometric calibration |
   +-------+----------------------------------+--------------------------------+-----------------+------------------------------+
   |Step 2c| fgcm,gbdes                       | apply calibration              | fan-out all DFs | photometrically calib. visits|
   +-------+----------------------------------+--------------------------------+-----------------+------------------------------+
@@ -188,11 +188,11 @@ Stage 1 operates visit-by-visit to remove instrumental signature and defects fro
 Stage 3 operates tract-by-tract and patch-by-patch within a tract (there are 100 patches per 2.6 square degree tract) to produce coadds in
 all bands.
 
-Stage 4 uses all visits overlaping a patch combined with the coadd object catalogs and images for difference imaging analysis (DIA) 
+Stage 4 uses all visits overlaping a patch combined with the coadd object catalogs and images for difference imaging analysis (DIA)
 to produce time-series light curves of all sources.
 
 
-Step 2c is a special fan-in stage where brighter star catalogs from across the whole DRP footprint (from all stage 1 outputs at all DFs) 
+Step 2c is a special fan-in stage where brighter star catalogs from across the whole DRP footprint (from all stage 1 outputs at all DFs)
 are brought together at the USDF to run a global photometric calibration step (fgcm). The per-detector solution for all visits/detectors
 is then distributed (fan-out) at the end of step2c back to each DF for continued processing with step2d.
 Step 7 is also a fan-in step, where summary footprint statistics and metrics for all tracts at all DFs are brought together at USDF
@@ -204,7 +204,7 @@ The 2x3 multisite test
 
 
 In late 2024 and early 2025 a small 2-tract at 3 DF test was run.
-Six tracts were chosen from  the HSC DRP2 survey and pairs of tracts were assigned to 
+Six tracts were chosen from  the HSC DRP2 survey and pairs of tracts were assigned to
 the three DFs: UKDF-LANCS, FRDF-IN2P3 and USDF-SLAC (RAL was still coming on line at that time).
 The location and numbering of the tracts in the 'hsc_rings_v1' skymap is shown in the Figure.
 
@@ -219,7 +219,7 @@ Stage (or steps) 1,2a and 2b were run at all three sites in parallel on their re
 
 Catalogs of three datasetTypes are needed as input to the global fgcm (step 2c).
 
-The Rucio data movement system (developed by the high energy physics community based at CERN) 
+The Rucio data movement system (developed by the high energy physics community based at CERN)
 was used in conjunction with the rucio-register and ctrl_injectd()
 middleware tools (developed by Steve P of NCSA) to:
 
@@ -243,14 +243,14 @@ only those solutions associated with the visits at each site were distributed to
 information for datasets that are associated with visits resident at a specific site and rejects unknown visits (i.e. FRDF rejects photometric
 solutions from visits at UKDF, etc).
 
-Following this fan-out, processing continued at the 3 DFs through stages  3 and 4. 
+Following this fan-out, processing continued at the 3 DFs through stages  3 and 4.
 
-Selected output data products were brought back (or could be brought back) to the USDF for examination. 
+Selected output data products were brought back (or could be brought back) to the USDF for examination.
 
-Processing was always done using a consistent, recent software executable stack available to all sites in the /cvmfs distributed file system.  
+Processing was always done using a consistent, recent software executable stack available to all sites in the /cvmfs distributed file system.
 This is a cached system which avoids overloading a distribution (i.e. docker hub) with multiple simultaneous downloads.
 
-PanDA workflow-management-system was used to submit jobs from a central DF (USDF) and switches in the bps submit files determined which 
+PanDA workflow-management-system was used to submit jobs from a central DF (USDF) and switches in the bps submit files determined which
 compute sites a job was sent to.  This generally worked well, once the configurations settled.
 
 Evaluation and Concerns, Next steps
@@ -259,18 +259,22 @@ Evaluation and Concerns, Next steps
 While the refinement of the multisite process continues, we have these observations from
 this early test:
 
-1. Configuration of all the pieces at each data facility (setting up the repos, loading the ancillary datasets (calibs,refcats,skymaps)) 
-and for all tools used (panDA, rucio configs ,rucio-register configs, ctrl_ingestd() k8s modules) is a large job -- 
-even though in principle it need be only done once.  
+1. Configuration of all the pieces at each data facility (setting up the repos, loading the ancillary datasets (calibs,refcats,skymaps))
+and for all tools used (panDA, rucio configs ,rucio-register configs, ctrl_ingestd() k8s modules) is a large job --
+even though in principle it need be only done once.
 Everything needs to be documented and then repeated from scratch to make sure it all still works.
 
 2. The division-of-labor and availability of resources at each DF should
 be reviewed and updated to match current conditions.
 
-3. Monitoring must be available to make sure that services are up (i.e. rucio, ctrl_ingestd) and that data is moving as expected.  
+3. Monitoring must be available to make sure that services are up (i.e. rucio, ctrl_ingestd) and that data is moving as expected.
 Rucio moves are currently 'open loop' in that one must keep polling a status for a given dataset to make sure it moved.
 
-4. There is still a lot of CM to be automated -- the 3x2 test here took over 3 months of wall-clock time (should be <  3 days) due to 
+4. There is still a lot of CM to be automated -- the 3x2 test here took over 3 months of wall-clock time (should be <  3 days) due to
 teething issues, configuration issues, operator misunderstandings.  The whole process is only recently becoming more stable.
 
+References
+==========
 
+.. bibliography::
+   :style: lsst_aa
