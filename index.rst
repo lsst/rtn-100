@@ -68,7 +68,7 @@ Experience from past DRP campaigns, DF specs
 
 Over the past several years, many small-to-medium scale
 DRP campaigns have been run.  These early DRP campaigns varied in size from
-a few hundred to many thousands of visits, covering two to several hundred tracts on the sky.
+a few hundred to many thousands of visits, covering two to several hundred tracts on the sky :cite:`RTN-095,RTN-063,RTN-039`.
 
 A tract covers about 2.1 unique square degrees of sky and overlaps neighboring tracts by 10%-20%.
 
@@ -272,3 +272,9 @@ Rucio moves are currently 'open loop' in that one must keep polling a status for
 
 4. There is still a lot of CM to be automated -- the 3x2 test here took over 3 months of wall-clock time (should be <  3 days) due to
 teething issues, configuration issues, operator misunderstandings.  The whole process is only recently becoming more stable.
+
+References
+==========
+
+.. bibliography::
+   :style: lsst_aa
